@@ -17,17 +17,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      - name: Generate wrapper (pinned 8.9)
-        run: gradle wrapper --gradle-version 8.9
-
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Download Gradle 8.9
+        run: |
+          curl -fsSLo gradle.zip https://services.gradle.org/distributions/gradle-8.9-bin.zip
+          unzip -q gradle.zip
+          echo "GRADLE_HOME=$PWD/gradle-8.9" >> "$GITHUB_ENV"
 
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: "$GRADLE_HOME/bin/gradle assembleDebug --stacktrace"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
