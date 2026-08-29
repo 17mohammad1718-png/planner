@@ -4,3 +4,4 @@ dist/
 .expo-shared/
 *.log
 .DS_Store
+.env

@@ -1,6 +1,6 @@
 # پلن کامل اپ Planner
 
-> تاریخ: ۱۴۰۴/۰۶/۰۷ — وضعیت: پلن اولیه، در انتظار پیاده‌سازی
+> تاریخ: ۱۴۰۴/۰۶/۰۷ — وضعیت: ✅ فاز ۰، ۱ و ۲ (غیر از بیلد EAS) پیاده‌سازی شده
 
 ## ۱. چشم‌انداز
 اپ اندرویدی یکپارچه برای ۴ نیاز اصلی:
@@ -65,21 +65,21 @@ tasks(id, title, description, date, time, repeat, priority, done, created_at)
 ## ۵. نقشه تسک‌ها (هر تسک = ۲ تا ۵ دقیقه + قابل تست)
 
 ### فاز ۰ — اسکلت
-- [ ] **T0-1** `planner/` — ساخت پروژه Expo: `npx create-expo-app planner --template` + TypeScript + NativeWind → تست `npx expo start`
-- [ ] **T0-2** `src/db/schema.ts` — طراحی اسکیما SQLite (جدول‌های بالا) + تابع `initDB()`
-- [ ] **T0-3** `src/lib/jalali.ts` — نصب `jalaali-js` + توابع `toJalali()`, `toGregorian()`, `formatJalali()`, `formatGregorian()`
+- [x] **T0-1** `planner/` — ساخت پروژه Expo: `npx create-expo-app planner --template` + TypeScript + NativeWind → تست `npx expo start`
+- [x] **T0-2** `src/db/schema.ts` — طراحی اسکیما SQLite (جدول‌های بالا) + تابع `initDB()`
+- [x] **T0-3** `src/lib/jalali.ts` — نصب `jalaali-js` + توابع `toJalali()`, `toGregorian()`, `formatJalali()`, `formatGregorian()`
 
 ### فاز ۱ — هسته
-- [ ] **T1-1** `src/screens/IdeasScreen.tsx` — لیست + افزودن/ویرایش/تغییر وضعیت ایده
-- [ ] **T1-2** `src/screens/ProjectsScreen.tsx` — لیست پروژه + تسک‌های داخلی + نوار پیشرفت
-- [ ] **T1-3** `src/screens/HabitsScreen.tsx` — افزودن عادت + گرید تیک روزانه + محاسبه استریک
-- [ ] **T1-4** `src/screens/TasksScreen.tsx` — افزودن تسک با DatePicker + اولویت + تکرار
-- [ ] **T1-5** `src/screens/CalendarScreen.tsx` — تقویم ماهانه (سوییچ شمسی/میلادی)، نقطه‌گذاری روزها، کلیک = لیست آیتم‌های روز
+- [x] **T1-1** `src/screens/IdeasScreen.tsx` — لیست + افزودن/ویرایش/تغییر وضعیت ایده
+- [x] **T1-2** `src/screens/ProjectsScreen.tsx` — لیست پروژه + تسک‌های داخلی + نوار پیشرفت (+ صفحه جزئیات پروژه)
+- [x] **T1-3** `src/screens/HabitsScreen.tsx` — افزودن عادت + گرید تیک روزانه + محاسبه استریک
+- [x] **T1-4** `src/screens/TasksScreen.tsx` — افزودن تسک با DatePicker شمسی + اولویت + تکرار + فیلترها
+- [x] **T1-5** `src/screens/CalendarScreen.tsx` — تقویم ماهانه (سوییچ شمسی/میلادی)، نقطه‌گذاری روزها، کلیک = لیست آیتم‌های روز
 
 ### فاز ۲ — پولیش
-- [ ] **T2-1** `src/components/BottomTabs.tsx` — تب‌بندی ۵ تایی (ایده/پروژه/خانه/عادت/تقویم)
-- [ ] **T2-2** `src/lib/seed.ts` — داده نمونه برای تست
-- [ ] **T2-3** بیلد APK: `eas build -p android --profile preview` → فایل قابل نصب
+- [x] **T2-1** `src/components/BottomTabs.tsx` — تب‌بندی ۵ تایی (ایده/پروژه/خانه/عادت/تقویم)
+- [x] **T2-2** `src/lib/seed.ts` — داده نمونه برای تست
+- [ ] **T2-3** بیلد APK: `eas build -p android --profile preview` → فایل قابل نصب (نیاز به اکانت EAS؛ خروجی اندروید با `npx expo export --platform android` verify شده)
 
 > هر تسک بعد از اتمام با `npx expo start` روی گوشی/امیولاتور تست می‌شود.
 
